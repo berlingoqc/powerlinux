@@ -14,4 +14,5 @@ git clone https://github.com/flazz/vim-colorschemes.git
 mkdir $HOME/.vim/colors
 mv ./vim-colorschemes/colors/* $HOME/.vim/colors/
 sudo rm -r ./vim-colorschemes
+vim -c PlugInstall -c q -c q
 

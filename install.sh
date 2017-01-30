@@ -8,7 +8,7 @@ usage () {
     cat <<EOF
     Usage of $0 : $0 [args]
     -v Install vim with custom configuration, plugins and cheatsheet
-    -z Install zsh with oh-my-zshi with custom alias and cheatsheet
+    -z Install zsh with oh-my-zsh with custom alias and cheatsheet
     -t Install tmux with custom configuration and service script
     -p Install programming language and IDE
     -n Install networking tools and cheatsheet
