@@ -4,7 +4,7 @@
 source ./func.sh
 
 OS=$(detect_os)
-
+echo $OS
 if [[ $OS == "arch" ]]; then
     # mono + monodevelop
     sudo pacman -S monodevelop
@@ -23,8 +23,8 @@ if [[ $OS == "deb" ]]; then
     sudo apt-get install monodevelop-current
     sudo apt-get install dotnet-dev-1.0.0-preview2.1-003177
     # install vs code
-    $FILE="vscode.deb"
-    wget https://go.microsoft.com/fwlink/?LinkID=760868 -O $FILE
-    sudo dpkg -i $FILE
+    wget https://go.microsoft.com/fwlink/?LinkID=760868 -O code.deb
+    sudo dpkg -i code.deb
     sudo apt-get install -f
+    rm code.deb
 fi

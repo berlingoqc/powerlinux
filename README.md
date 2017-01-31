@@ -34,7 +34,11 @@ in witch we use Ubuntu ....
 
 ## How to use me ?
 
-Very very hard... First , you have to clone this repository
+Very very hard... First , you have to clone this repository and download the dependencies
+* git
+* wget
+* curl
+* unzip
 ```bash
 wquintal@localhost # git clone https://github.com/berlingoqc/powerlinux.git ./ 
 ```
