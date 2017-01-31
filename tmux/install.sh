@@ -7,7 +7,7 @@ install_pkg tmux
 cp ./tmux/.tmux.conf $HOME/
 # Si on n'est sur arch linux copie le fichier systemd
 OS=$(detect_os)
-if [[ $OS == "arch" ]]; then
+if [[ $OS == "arch" || $OS == "deb" ]]; then
     mkdir -p $HOME/.config/systemd/user/
     cp ./tmux/tmux.service $HOME/.config/systemd/user/
     systemctl --user enable tmux.service

@@ -28,3 +28,16 @@ if [[ $OS == "deb" ]]; then
     sudo apt-get install -f
     rm code.deb
 fi
+# Installation de plugins pour vscode
+declare -a plug=(\
+"HookyQR.beautify" \
+"dbankier.vscode-instant-markdown" \
+"donjayamanne.python" \
+"lukehoban.Go" \
+"ms-vscode.csharp" \
+"vscodevim.vim")
+
+for i in "${plug[@]}"
+do
+    code --install-extension "$i"
+done

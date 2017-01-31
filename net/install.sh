@@ -13,10 +13,11 @@ rm -r Cheat\ Sheets\ -\ PacketLife.net
 install_pkg wireshark-qt
 install_pkg openvpn
 install_pkg tcpdump
+install_pkg smbclient
 OS=$(detect_os)
 if [[ $OS == "arch" ]]; then
-    sudo pacman -S openssh
+    sudo pacman -S openssh nfs-utils
 elif [[ $OS == "deb" ]]; then
-    sudo apt install openssh-client openssh-server
+    sudo apt install openssh-client openssh-server nfs-common
 fi
 

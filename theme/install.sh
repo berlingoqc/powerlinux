@@ -15,4 +15,9 @@ elif [[ $OS == "deb" ]]; then
     cd ~/.fonts && wget https://github.com/google/fonts/archive/master.zip && unzip master.zip
     fc-cache -fv
 fi
+# If unity : unity-tweak-tool
+# if gnome : gnome-tweak-tool
+if [[ $XDG_CURRENT_DESKTOP == "Unity" ]]; then
+        sudo apt install unity-tweak-tool
+fi
 
