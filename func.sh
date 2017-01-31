@@ -9,14 +9,15 @@ detect_os () {
     if [[ $? == 0 ]]; then
         OS="arch"
         echo "arch"
-    fi   
-    which apt &> /dev/null
-    if [[ $? == 0 ]]; then
-        OS="deb"
-        echo "deb"
-    else
-        echo "Unknown OS...exiting"
-        exit 1
+    else   
+    	which apt &> /dev/null
+    	if [[ $? == 0 ]]; then
+        	OS="deb"
+        	echo "deb"
+    	else
+        	echo "Unknown OS...exiting"
+        	exit 1
+    	fi
     fi
 }
 
