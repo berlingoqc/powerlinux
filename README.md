@@ -41,17 +41,20 @@ wquintal@localhost # git clone https://github.com/berlingoqc/powerlinux.git ./
 Secondo , you have to give yourself the execution right like this
 ```bash
 wquintal@localhost # chmod u+x ./powerlinux/install.sh
+wquintal@localhost # cd ./powerlinux
 ```
 Thirdo , you execute this script :0 :0 with *-h* if you want to see the help or 
 if you run this script without arguments it will install all option named above.
 ```bash
-wquintal@localhost # ./powerline/install.sh -h
+wquintal@localhost # ./install.sh -h
     Usage of ./install.sh : ./install.sh [args]                                     
     -v Install vim with custom configuration, plugins and cheatsheet
     -z Install zsh with oh-my-zsh with custom alias and cheatsheet
     -t Install tmux with custom configuration and service script
     -p Install programming language and IDE
     -n Install networking tools and cheatsheet
+    -f Install fonts and GTK themes
+    -s Install various terminal
     -a Install all (Default)
     -h Print help       
 ```

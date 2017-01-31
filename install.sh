@@ -12,6 +12,8 @@ usage () {
     -t Install tmux with custom configuration and service script
     -p Install programming language and IDE
     -n Install networking tools and cheatsheet
+    -f Install fonts and GTK themes
+    -s Install various terminal
     -a Install all (Default)
     -h Print help 
 EOF
@@ -24,7 +26,7 @@ if [ ! -d $CSFOLD ]; then
     sudo chmod 0755 $CSFOLD
 fi
 
-[ $# -eq 0 ] && { echo "Default installation ! Go grap a coffee it can be long"; ./$0 -v -z -t -p -n; exit 0; }
+[ $# -eq 0 ] && { echo "Default installation ! Go grap a coffee it can be long"; ./$0 -v -z -t -p -n -f -s; exit 0; }
 while (( $# > 0 )); do
     case "$1" in
         -v)
@@ -42,8 +44,14 @@ while (( $# > 0 )); do
         -n)
             ./net/install.sh
         ;;
+        -s)
+            ./terminal/install.sh
+        ;;
+        -f)
+            ./theme/install.sh
+        ;;
         -a)
-            ./$0 -v -z -t -p -n
+            ./$0 -v -z -t -p -n -f -s
         ;;
         -h|*)
             usage

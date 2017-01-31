@@ -6,7 +6,7 @@ FILE="pl.net-cs"
 wget "http://media.packetlife.net/media/library/Cheat%20Sheets%20-%20PacketLife.net.zip" -O ${FILE}.zip
 unzip ${FILE}.zip
 sudo mv ./Cheat* /usr/local/share/cheatsheet/
-rm ${FILE}.zip
+rm -r Cheat\ Sheets\ -\ PacketLife.net
 
 # Installation d'outils réseaux pour linux
 # wireshark , tcpdump , openvnn , openssh client/server (création clé)

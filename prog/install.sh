@@ -9,10 +9,12 @@ if [[ $OS == "arch" ]]; then
     # mono + monodevelop
     sudo pacman -S monodevelop
     # .NET core
-    install_aur dotnet-cli
+    # Manque des dépendences de aur pour ce paquet
+    #install_aur dotnet-cli
     # Install vscode
     install_aur visual-studio-code
-elif [[ $OS == "deb" ]]; then
+fi
+if [[ $OS == "deb" ]]; then
     # .NET core et mono + monodevelop
     sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ yakkety main" > /etc/apt/sources.list.d/dotnetdev.list'
     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 417A0893
