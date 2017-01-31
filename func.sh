@@ -20,8 +20,6 @@ detect_os () {
     fi
 }
 
-detect_os
-
 install_aur () {
     git clone https://aur.archlinux.org/$1.git
     cd $1
@@ -32,6 +30,7 @@ install_aur () {
 
 install_pkg () {
     # Vérification des params
+    detect_os
     if [[ $OS == "arch" ]]; then
         if [[ $1 == "aur" ]]; then
               install_aur $2

@@ -2,7 +2,7 @@
 
 source ./func.sh
 # Assure que dialog est installer sur le systeme
-
+# need curl , wget , git , unzip
 #Script d'installation
 usage () {
     cat <<EOF

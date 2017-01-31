@@ -14,5 +14,9 @@ install_pkg wireshark-qt
 install_pkg openvpn
 install_pkg tcpdump
 OS=$(detect_os)
-[[ $OS == "arch" ]] && sudo pacman -S openssh
+if [[ $OS == "arch" ]]; then
+    sudo pacman -S openssh
+elif [[ $OS == "deb" ]]; then
+    sudo apt install openssh-client openssh-server
+fi
 
