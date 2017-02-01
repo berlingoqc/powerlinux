@@ -21,3 +21,4 @@ elif [[ $OS == "deb" ]]; then
     sudo apt install openssh-client openssh-server nfs-common
 fi
 
+#pl.net-cs.zip
