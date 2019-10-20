@@ -1,67 +1,52 @@
-" Option visuel
 
 syntax enable
-" Configuratio taille des tabs
 set tabstop=4
 set softtabstop=4
-set expandtab "tabs are spaces
-" Affiche numéro de ligne
+set expandtab
 set number
-" Highlight la ligne courante
 set cursorline
-" Permet le loadage dynamique de fichier
-" d'indentation spécifique selon type fichier
-" pour python par exemple très utile
+set noswapfile
+
 filetype indent on
-" Autocomplete dans le menu de commande
-set wildmenu
-" Vim redraw pour rien apparamment
-" alors meilleur performance en lazy mode
-set lazyredraw
-" Highlight matching bracket
-set showmatch
+filetype plugin on
 
+set autowrite
 
-" Option Search
-" Commence la recheche pendant écriture du mots
-set incsearch
-" Highlight matches
-set hlsearch
-" Vim laisse highlight recherche donc mets un macro
-" sur la commande qui enlève hl last search
-" touche : space
-nnoremap <leader><space> :nohlsearch<CR>
-" Active le folding des blocks de code
-set foldenable
-" Ici la valeur 10 ouvre la plus part des folds
-" par default , 99 est la valeur maximal qui garantit
-" l'ouverture de toute
-set foldlevelstart=10 
-set foldnestmax=10
-set foldmethod=indent
-" map space pour ouvrir et fermet fold
-nnoremap <space> za
+call plug#begin('~/.vim/plugged')
 
-" Option Plugins
-" Installation de plugins avec notre plugins manager
-" configuer avec :PlugInstall
-call plug#begin('$HOME/.vim/plugged')
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'fatih/vim-go', { 'tag': '*' }
 
-Plug 'tpope/vim-markdown'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'scrooloose/syntastic'
 Plug 'junegunn/vim-easy-align'
-Plug 'fatih/vim-go'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 
 call plug#end()
-" active deux row de statusbar pour afficher airline
+
+:nnoremap <C-g> :NERDTreeToggle<CR>
+
+nnoremap <c-z> <nop>
+
+au filetype go inoremap <buffer> . .<C-x><C-o>
+
+
+
+
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+
 set laststatus=2
+
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='simple'
-" Option pour Markdown plugins
-let g:markdown_fenced_languages = ['python', 'go', 'bash=sh', 'c#']
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+let g:airine_theme = 'simple'
+
+let g:go_fmt_command = "goimports"
+let g:go_auto_type_info = 1
+let g:go_gocode_unimported_packages = 1
+let g:go_template_autocreate = 0
+let g:go_auto_type_info = 1
+let g:go_addtags_transform = "snakecase"
+let g:go_def_reuse_buffer = 1
